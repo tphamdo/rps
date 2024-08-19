@@ -33,23 +33,6 @@ restart.addEventListener("click", () => {
     if (boxScore.childElementCount === 3) boxScore.removeChild(boxScore.lastChild);
 });
 
-function playGame() {
-    const NUM_ROUNDS = 5;
-
-    for (let i = 0; i<NUM_ROUNDS; ++i) {
-        const hc = getHumanChoice();
-        const cc = getComputerChoice();
-        [hS, cS] = playRound(cc, hc);
-        humanScore += hS, computerScore += cS;
-        console.log(`You played ${hc}. Computer played ${cc}`)
-        console.log(`You - Computer: ${humanScore} - ${computerScore}`)
-    }
-
-    if (humanScore === computerScore) console.log("TIE!")
-    else if (computerScore > humanScore) console.log("Computer wins!")
-    else console.log("You win!")
-}
-
 function playRound(cc, hc) {
     if (hc === "ERROR" || cc === hc) {
         // tie
@@ -64,17 +47,4 @@ function playRound(cc, hc) {
 
 function getComputerChoice() {
     return choices[Math.floor(Math.random() * 3)];
-}
-
-function getHumanChoice() {
-    let choice = prompt("rock, paper, scissors?", "rock");
-    choice = choice.toLowerCase();
-
-    if (!choices.includes(choice)) {
-        let errorStr = "You must choose one of rock, paper, scissors"
-        console.error(errorStr)
-        alert(errorStr)
-        return "ERROR"
-    }
-    return choice
 }
