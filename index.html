@@ -3,8 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="game.js" defer></script>
   </head>
   <body>
+    <ul id="buttons">
+      <li><button id="rock">Rock</button></li>
+      <li><button id="paper">Paper</button></li>
+      <li><button id="scissors">Scissors</button></li>
+    </ul>
+    <button id="restart">Restart</button>
+    <div class="box-score">
+      <p id="score">You - Computer: 0 - 0</p>
+      <p id="moves"></p>
+    </div>
   </body>
 </html>
