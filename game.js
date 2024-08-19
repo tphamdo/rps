@@ -18,6 +18,7 @@ function playGame() {
     else if (computerScore > humanScore) console.log("Computer wins!")
     else console.log("You win!")
 }
+
 function playRound(cc, hc) {
     if (hc === "ERROR" || cc === hc) {
         // tie
@@ -28,8 +29,6 @@ function playRound(cc, hc) {
     } 
     // human win
     return [1, 0]
-   
-
 }
 
 function getComputerChoice() {
