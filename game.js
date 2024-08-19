@@ -1,12 +1,12 @@
 const choices = ["rock", "paper", "scissors"];
 
-async function playGame() {
+function playGame() {
     const NUM_ROUNDS = 5;
     let humanScore = 0;
     let computerScore = 0;
 
     for (let i = 0; i<NUM_ROUNDS; ++i) {
-        const hc = await getHumanChoice();
+        const hc = getHumanChoice();
         const cc = getComputerChoice();
         [hS, cS] = playRound(cc, hc);
         humanScore += hS, computerScore += cS;
@@ -36,7 +36,7 @@ function getComputerChoice() {
     return choices[Math.floor(Math.random() * 3)];
 }
 
-async function getHumanChoice() {
+function getHumanChoice() {
     let choice = prompt("rock, paper, scissors?", "rock");
     choice = choice.toLowerCase();
 
